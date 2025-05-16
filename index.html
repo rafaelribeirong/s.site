@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfólio de Rafael Ribeiro - Estudante de Pentest e Segurança Cibernética" />
+  <meta name="description" content="Portfólio de Rafael Ribeiro - Especialista em Pentest e Segurança Cibernética" />
   <title>Rafael Ribeiro | Pentest & Security</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -200,8 +200,12 @@
       color: var(--text-secondary);
     }
     
-    /* Projects Section */
-    .project-card {
+    /* Portfolio Section */
+    .portfolio-section {
+      padding: 5rem 0;
+    }
+    
+    .portfolio-card {
       background-color: var(--secondary-bg);
       border-radius: 8px;
       overflow: hidden;
@@ -210,12 +214,36 @@
       border: 1px solid rgba(255, 255, 255, 0.05);
     }
     
-    .project-card:hover {
+    .portfolio-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(255, 44, 44, 0.2);
     }
     
-    .project-image {
+    .portfolio-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    
+    .portfolio-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    
+    .badge-red {
+      background-color: rgba(255, 44, 44, 0.2);
+      color: var(--accent-color);
+    }
+    
+    .portfolio-date {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    .portfolio-image {
       height: 200px;
       background-color: #1a1a1a;
       display: flex;
@@ -223,22 +251,22 @@
       justify-content: center;
     }
     
-    .project-content {
+    .portfolio-content {
       padding: 1.5rem;
     }
     
-    .project-title {
+    .portfolio-title {
       font-weight: 700;
       font-size: 1.3rem;
       margin-bottom: 0.5rem;
     }
     
-    .project-description {
+    .portfolio-description {
       color: var(--text-secondary);
       margin-bottom: 1rem;
     }
     
-    .project-tech {
+    .portfolio-tech {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
@@ -254,15 +282,9 @@
       font-weight: 600;
     }
     
-    .project-links a {
-      color: var(--text-primary);
-      margin-right: 1rem;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    
-    .project-links a:hover {
-      color: var(--accent-color);
+    .portfolio-links {
+      display: flex;
+      gap: 1rem;
     }
     
     /* Certifications */
@@ -333,10 +355,16 @@
       border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
     
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
     .social-links a {
       color: var(--text-secondary);
       font-size: 1.5rem;
-      margin-right: 1.5rem;
       transition: color 0.3s ease;
     }
     
@@ -347,7 +375,7 @@
     .copyright {
       color: var(--text-secondary);
       font-size: 0.9rem;
-      margin-top: 1rem;
+      text-align: center;
     }
     
     /* Responsive */
@@ -382,6 +410,11 @@
       .hero-subtitle {
         font-size: 1.1rem;
       }
+      
+      .portfolio-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
     }
   </style>
 </head>
@@ -397,7 +430,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projetos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfólio</a></li>
           <li class="nav-item"><a class="nav-link" href="#certs">Certificações</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
         </ul>
@@ -412,10 +445,10 @@
         <div class="col-lg-6">
           <div class="hero-content">
             <h1 class="hero-title animate__animated animate__fadeInDown">Olá, eu sou <span class="highlight">Rafael Ribeiro</span></h1>
-            <p class="hero-subtitle animate__animated animate__fadeIn animate__delay-1s">Estudante de segurança cibernética e pentest, compartilhando minha jornada de aprendizado e projetos.</p>
+            <p class="hero-subtitle animate__animated animate__fadeIn animate__delay-1s">Especialista em segurança ofensiva, compartilhando projetos e conhecimentos em pentest e segurança cibernética.</p>
             <div class="animate__animated animate__fadeIn animate__delay-2s">
-              <a href="#projects" class="btn btn-accent">Ver Projetos</a>
-              <a href="https://github.com/seuuser" target="_blank" class="btn btn-outline-accent">
+              <a href="#portfolio" class="btn btn-accent">Ver Portfólio</a>
+              <a href="https://github.com/rafaelribeiros" target="_blank" class="btn btn-outline-accent">
                 <i class="fab fa-github"></i> GitHub
               </a>
             </div>
@@ -423,7 +456,7 @@
         </div>
         <div class="col-lg-6">
           <div class="hero-image animate__animated animate__fadeIn animate__delay-1s">
-            <img src="/sower/img/www46ac1-removebg-preview.png" alt="Ilustração de segurança cibernética" class="img-fluid" />
+            <img src="https://via.placeholder.com/600x500/121212/ff2c2c?text=Cyber+Security" alt="Ilustração de segurança cibernética" class="img-fluid" />
           </div>
         </div>
       </div>
@@ -493,32 +526,37 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="py-5">
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio-section">
     <div class="container">
-      <h2 class="section-title">Meus <span class="highlight">Projetos</span></h2>
+      <h2 class="section-title">Meu <span class="highlight">Portfólio</span></h2>
       
       <div class="row">
-        <!-- Projeto 1 -->
+        <!-- Lab Lion -->
         <div class="col-lg-6">
-          <div class="project-card">
-            <div class="project-image">
+          <div class="portfolio-card">
+            <div class="portfolio-header">
+              <span class="portfolio-badge badge-red">Pentest</span>
+              <span class="portfolio-date">Jun 2024</span>
+            </div>
+            <div class="portfolio-image">
               <i class="fas fa-lock" style="font-size: 3rem; color: var(--accent-color);"></i>
             </div>
-            <div class="project-content">
-              <h3 class="project-title">Análise de Vulnerabilidades em Aplicação Web</h3>
-              <p class="project-description">Identificação e exploração de vulnerabilidades OWASP Top 10 em aplicação web deliberadamente vulnerável.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Burp Suite</span>
-                <span class="tech-tag">SQL Injection</span>
-                <span class="tech-tag">XSS</span>
+            <div class="portfolio-content">
+              <h3 class="portfolio-title">Lab Lion - Exploração Avançada</h3>
+              <p class="portfolio-description">Exploração completa de ambiente vulnerável com chain de vulnerabilidades desde SQL Injection até escalonamento para root via Cron Jobs.</p>
+              <div class="portfolio-tech">
+                <span class="tech-tag">SQLi</span>
+                <span class="tech-tag">RCE</span>
+                <span class="tech-tag">PrivEsc</span>
+                <span class="tech-tag">Webshell</span>
               </div>
-              <div class="project-links">
-                <a href="https://github.com/seuuser/projeto1" target="_blank">
-                  <i class="fab fa-github"></i> Código
+              <div class="portfolio-links">
+                <a href="https://github.com/rafaelribeiros/lab-lion" target="_blank" class="btn btn-accent btn-sm">
+                  <i class="fab fa-github"></i> Relatório
                 </a>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#project1Modal">
-                  <i class="fas fa-book-open"></i> Relatório
+                <a href="#" data-bs-toggle="modal" data-bs-target="#labLionModal" class="btn btn-outline-accent btn-sm">
+                  <i class="fas fa-book-open"></i> Detalhes
                 </a>
               </div>
             </div>
@@ -527,23 +565,27 @@
         
         <!-- Projeto 2 -->
         <div class="col-lg-6">
-          <div class="project-card">
-            <div class="project-image">
+          <div class="portfolio-card">
+            <div class="portfolio-header">
+              <span class="portfolio-badge badge-red">Red Team</span>
+              <span class="portfolio-date">Mai 2024</span>
+            </div>
+            <div class="portfolio-image">
               <i class="fas fa-network-wired" style="font-size: 3rem; color: var(--accent-color);"></i>
             </div>
-            <div class="project-content">
-              <h3 class="project-title">Simulação de Ataque Red Team</h3>
-              <p class="project-description">Simulação de ataque avançado em ambiente controlado, desde reconhecimento até exfiltração de dados.</p>
-              <div class="project-tech">
+            <div class="portfolio-content">
+              <h3 class="portfolio-title">Simulação de Ataque Red Team</h3>
+              <p class="portfolio-description">Simulação de ataque avançado em ambiente controlado, desde reconhecimento até exfiltração de dados.</p>
+              <div class="portfolio-tech">
                 <span class="tech-tag">C2 Framework</span>
                 <span class="tech-tag">Movimento Lateral</span>
                 <span class="tech-tag">Evasion</span>
               </div>
-              <div class="project-links">
-                <a href="https://github.com/seuuser/projeto2" target="_blank">
+              <div class="portfolio-links">
+                <a href="https://github.com/rafaelribeiros/red-team-simulation" target="_blank" class="btn btn-accent btn-sm">
                   <i class="fab fa-github"></i> Código
                 </a>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#project2Modal">
+                <a href="#" class="btn btn-outline-accent btn-sm">
                   <i class="fas fa-book-open"></i> Relatório
                 </a>
               </div>
@@ -553,24 +595,28 @@
         
         <!-- Projeto 3 -->
         <div class="col-lg-6">
-          <div class="project-card">
-            <div class="project-image">
+          <div class="portfolio-card">
+            <div class="portfolio-header">
+              <span class="portfolio-badge badge-red">Ferramenta</span>
+              <span class="portfolio-date">Abr 2024</span>
+            </div>
+            <div class="portfolio-image">
               <i class="fas fa-terminal" style="font-size: 3rem; color: var(--accent-color);"></i>
             </div>
-            <div class="project-content">
-              <h3 class="project-title">Ferramenta de Pentest Automatizado</h3>
-              <p class="project-description">Script Python para automação de tarefas repetitivas em testes de invasão.</p>
-              <div class="project-tech">
+            <div class="portfolio-content">
+              <h3 class="portfolio-title">Ferramenta de Pentest Automatizado</h3>
+              <p class="portfolio-description">Script Python para automação de tarefas repetitivas em testes de invasão.</p>
+              <div class="portfolio-tech">
                 <span class="tech-tag">Python</span>
                 <span class="tech-tag">Automation</span>
                 <span class="tech-tag">Nmap</span>
               </div>
-              <div class="project-links">
-                <a href="https://github.com/seuuser/projeto3" target="_blank">
+              <div class="portfolio-links">
+                <a href="https://github.com/rafaelribeiros/pentest-automation" target="_blank" class="btn btn-accent btn-sm">
                   <i class="fab fa-github"></i> Código
                 </a>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#project3Modal">
-                  <i class="fas fa-book-open"></i> Documentação
+                <a href="#" class="btn btn-outline-accent btn-sm">
+                  <i class="fas fa-book-open"></i> Docs
                 </a>
               </div>
             </div>
@@ -579,23 +625,27 @@
         
         <!-- Projeto 4 -->
         <div class="col-lg-6">
-          <div class="project-card">
-            <div class="project-image">
+          <div class="portfolio-card">
+            <div class="portfolio-header">
+              <span class="portfolio-badge badge-red">Pesquisa</span>
+              <span class="portfolio-date">Mar 2024</span>
+            </div>
+            <div class="portfolio-image">
               <i class="fas fa-user-secret" style="font-size: 3rem; color: var(--accent-color);"></i>
             </div>
-            <div class="project-content">
-              <h3 class="project-title">Estudo de Técnicas de Evasão</h3>
-              <p class="project-description">Pesquisa e implementação de técnicas para bypass de antivírus e sistemas de detecção.</p>
-              <div class="project-tech">
+            <div class="portfolio-content">
+              <h3 class="portfolio-title">Técnicas de Evasão AV</h3>
+              <p class="portfolio-description">Pesquisa e implementação de técnicas para bypass de antivírus e sistemas de detecção.</p>
+              <div class="portfolio-tech">
                 <span class="tech-tag">AV Evasion</span>
                 <span class="tech-tag">Obfuscation</span>
                 <span class="tech-tag">Shellcode</span>
               </div>
-              <div class="project-links">
-                <a href="https://github.com/seuuser/projeto4" target="_blank">
+              <div class="portfolio-links">
+                <a href="https://github.com/rafaelribeiros/av-evasion" target="_blank" class="btn btn-accent btn-sm">
                   <i class="fab fa-github"></i> Código
                 </a>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#project4Modal">
+                <a href="#" class="btn btn-outline-accent btn-sm">
                   <i class="fas fa-book-open"></i> Artigo
                 </a>
               </div>
@@ -648,7 +698,7 @@
             <h3 class="cert-title">TryHackMe Complete Beginner</h3>
             <p class="cert-org">TryHackMe</p>
             <p class="cert-date">2023</p>
-            <a href="https://tryhackme.com/p/[seuuser]" target="_blank" class="btn btn-outline-accent btn-sm mt-2">Ver Perfil</a>
+            <a href="https://tryhackme.com/p/rafaelribeiros" target="_blank" class="btn btn-outline-accent btn-sm mt-2">Ver Perfil</a>
           </div>
         </div>
       </div>
@@ -656,7 +706,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-5">
+  <section id="contact" class="contact-section">
     <div class="container">
       <h2 class="section-title">Entre em <span class="highlight">Contato</span></h2>
       
@@ -668,7 +718,7 @@
             </div>
             <div>
               <h4>Email</h4>
-              <a href="mailto:seuemail@provedor.com" class="contact-link">seuemail@provedor.com</a>
+              <a href="mailto:rafael@example.com" class="contact-link">rafael@example.com</a>
             </div>
           </div>
           
@@ -678,7 +728,7 @@
             </div>
             <div>
               <h4>LinkedIn</h4>
-              <a href="https://linkedin.com/in/seuuser" target="_blank" class="contact-link">linkedin.com/in/seuuser</a>
+              <a href="https://linkedin.com/in/rafaelribeiros" target="_blank" class="contact-link">linkedin.com/in/rafaelribeiros</a>
             </div>
           </div>
           
@@ -688,7 +738,7 @@
             </div>
             <div>
               <h4>GitHub</h4>
-              <a href="https://github.com/seuuser" target="_blank" class="contact-link">github.com/seuuser</a>
+              <a href="https://github.com/rafaelribeiros" target="_blank" class="contact-link">github.com/rafaelribeiros</a>
             </div>
           </div>
           
@@ -723,42 +773,53 @@
 
   <!-- Footer -->
   <footer>
-    <div class="container text-center">
+    <div class="container">
       <div class="social-links">
-        <a href="https://github.com/seuuser" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/seuuser" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://tryhackme.com/p/seuuser" target="_blank"><i class="fas fa-lock"></i></a>
-        <a href="https://twitter.com/seuuser" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/rafaelribeiros" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/rafaelribeiros" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://tryhackme.com/p/rafaelribeiros" target="_blank"><i class="fas fa-lock"></i></a>
+        <a href="https://twitter.com/rafaelribeiros" target="_blank"><i class="fab fa-twitter"></i></a>
       </div>
-      <p class="copyright">© 2023 [Seu Nome]. Todos os direitos reservados.</p>
+      <p class="copyright">© 2024 Rafael Ribeiro. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <!-- Project Modals -->
-  <div class="modal fade" id="project1Modal" tabindex="-1" aria-hidden="true">
+  <!-- Lab Lion Modal -->
+  <div class="modal fade" id="labLionModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content bg-dark">
         <div class="modal-header">
-          <h5 class="modal-title">Análise de Vulnerabilidades em Aplicação Web</h5>
+          <h5 class="modal-title">Lab Lion - Detalhes do Projeto</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <!-- Conteúdo detalhado do projeto -->
           <h6>Resumo do Projeto</h6>
-          <p>Análise detalhada de vulnerabilidades em uma aplicação web vulnerável (DVWA), incluindo:</p>
+          <p>Exploração completa de um ambiente vulnerável contendo:</p>
           <ul>
-            <li>SQL Injection</li>
-            <li>Cross-Site Scripting (XSS)</li>
-            <li>Cross-Site Request Forgery (CSRF)</li>
-            <li>Command Injection</li>
+            <li>SQL Injection levando a RCE</li>
+            <li>Upload de webshell maliciosa</li>
+            <li>Escalonamento de privilégio via Cron Jobs</li>
           </ul>
-          <h6 class="mt-3">Metodologia</h6>
-          <p>Utilização de Burp Suite para interceptação e manipulação de requisições, exploração manual de vulnerabilidades e desenvolvimento de scripts para automação de testes.</p>
-          <h6 class="mt-3">Resultados</h6>
-          <p>Identificação de 8 vulnerabilidades críticas, com recomendações de mitigação para cada uma.</p>
+          
+          <h6 class="mt-4">Metodologia</h6>
+          <ol>
+            <li><strong>Reconhecimento</strong>: Varredura com Nmap</li>
+            <li><strong>Exploração</strong>: SQLi → RCE via INTO OUTFILE</li>
+            <li><strong>Pós-exploração</strong>: Webshell e shell reverso</li>
+            <li><strong>Privilege Escalation</strong>: Exploração de Cron Job</li>
+          </ol>
+          
+          <h6 class="mt-4">Técnicas Utilizadas</h6>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="tech-tag">SQL Injection</span>
+            <span class="tech-tag">RCE</span>
+            <span class="tech-tag">Webshell</span>
+            <span class="tech-tag">Cron Job Hijacking</span>
+            <span class="tech-tag">LinPEAS</span>
+          </div>
         </div>
         <div class="modal-footer">
-          <a href="https://github.com/seuuser/projeto1" target="_blank" class="btn btn-accent">
+          <a href="https://github.com/rafaelribeiros/lab-lion" target="_blank" class="btn btn-accent">
             <i class="fab fa-github"></i> Ver no GitHub
           </a>
           <button type="button" class="btn btn-outline-accent" data-bs-dismiss="modal">Fechar</button>
