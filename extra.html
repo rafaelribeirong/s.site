@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Pentest</title>
+    <style>
+        :root {
+            --hacker-green: #00ff00;
+            --dark-bg: #111111;
+            --card-bg: #1e1e1e;
+            --text-color: #ffffff;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Easter Egg Input */
+        #secret-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: transparent;
+            border: 1px solid var(--hacker-green);
+            color: var(--hacker-green);
+            font-family: 'Courier New', monospace;
+            text-align: center;
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--hacker-green);
+        }
+        
+        h1 {
+            color: var(--hacker-green);
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #aaaaaa;
+        }
+        
+        /* Cards */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .card h2 {
+            color: var(--hacker-green);
+            border-bottom: 1px dashed var(--hacker-green);
+            padding-bottom: 10px;
+        }
+        
+        /* Skills */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill {
+            background-color: #333;
+            color: var(--hacker-green);
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        
+        /* Hidden Content */
+        #hidden-content {
+            display: none;
+            background-color: #002200;
+            border: 1px dashed var(--hacker-green);
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .flag {
+            color: var(--hacker-green);
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Easter Egg Input -->
+        <input 
+            id="secret-input" 
+            type="text" 
+            placeholder="Digite 'true' para conteúdo secreto..."
+            oninput="checkSecret(this.value)"
+        >
+        
+        <!-- Header -->
+        <header>
+            <h1>SEU NOME AQUI</h1>
+            <p class="subtitle">Pentester | Ethical Hacker | Security Researcher</p>
+        </header>
+        
+        <!-- Sobre Mim -->
+        <div class="card">
+            <h2>whoami</h2>
+            <p>Estudante de segurança ofensiva com foco em pentest web. Atualmente aprendendo sobre vulnerabilidades OWASP e praticando em plataformas como TryHackMe e HackTheBox.</p>
+        </div>
+        
+        <!-- Habilidades -->
+        <div class="card">
+            <h2>Habilidades</h2>
+            <div class="skills">
+                <span class="skill">Pentest Web</span>
+                <span class="skill">OWASP Top 10</span>
+                <span class="skill">Burp Suite</span>
+                <span class="skill">Python</span>
+                <span class="skill">Linux</span>
+                <span class="skill">SQL Injection</span>
+                <span class="skill">XSS</span>
+                <span class="skill">Nmap</span>
+            </div>
+        </div>
+        
+        <!-- Projetos -->
+        <div class="card">
+            <h2>Projetos</h2>
+            <h3>Write-up: Exploração de SQLi</h3>
+            <p>Análise detalhada de uma vulnerabilidade de injeção SQL em um sistema de gerenciamento de conteúdo.</p>
+            
+            <h3>Automação com Python</h3>
+            <p>Scripts para automatizar testes de vulnerabilidades básicas.</p>
+        </div>
+        
+        <!-- Conteúdo Secreto -->
+        <div id="hidden-content">
+            <div class="flag">FLAG: {Voce_Eh_Um_Hacker}</div>
+            <p>Parabéns por encontrar o easter egg!</p>
+            <p>Este é seu conteúdo secreto personalizável.</p>
+        </div>
+    </div>
+
+    <script>
+        function checkSecret(value) {
+            if (value.toLowerCase() === "true") {
+                document.getElementById('hidden-content').style.display = 'block';
+            } else {
+                document.getElementById('hidden-content').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
